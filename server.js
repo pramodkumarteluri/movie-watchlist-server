@@ -19,11 +19,6 @@ app.use(express.json());
 app.use('/auth', require('./routes/authRoutes'));
 app.use("/api/movies", require("./routes/movieRoutes"));
 
-// Fallback route
-app.use((req, res) => {
-  res.status(404).json({ error: "Endpoint not found" });
-});
-
 app.get("/", (req, res) => {
   res.send("<h1>Movie Watchlist App Running..</h1>");
 });
