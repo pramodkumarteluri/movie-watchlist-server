@@ -2,8 +2,6 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const cors = require("cors");
-const authRoutes = require("./routes/authRoutes");
-const movieRoutes = require("./routes/movieRoutes");
 
 
 dotenv.config();
@@ -19,7 +17,7 @@ app.use(express.json());
 
 // Route Handlers
 app.use('/auth', require('./routes/authRoutes'));
-app.use("/api/movies", require("./routes/movies"));
+app.use("/api/movies", require("./routes/movieRoutes"));
 
 // Fallback route
 app.use((req, res) => {

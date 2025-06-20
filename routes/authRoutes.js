@@ -6,7 +6,7 @@ const router = express.Router();
 const User = require("../models/User");
 
 // Register route
-router.post("https://movie-wishlist-server.onrender.com/register", async (req, res) => {
+router.post("/register", async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
